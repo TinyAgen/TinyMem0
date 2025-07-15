@@ -1,6 +1,26 @@
-# 极简化记忆系统
+# 极简化记忆系统 - 学习项目
 
-一个基于Qdrant向量数据库和Qwen大语言模型的智能记忆系统，支持记忆的写入、检索和处理。
+> **⚠️ 学习项目声明**: 这是一个用于学习和研究目的的开源项目，旨在探索和实现基于向量数据库的智能记忆系统。本项目仅供学习交流使用，不适用于生产环境。
+
+## 项目概述
+
+这是一个基于Qdrant向量数据库和Qwen大语言模型的智能记忆系统**学习项目**，支持记忆的写入、检索和处理。通过这个项目，您可以学习：
+
+- 向量数据库的实际应用
+- 大语言模型在记忆系统中的应用
+- 语义搜索的实现原理
+- 记忆冲突处理机制
+- 智能记忆系统的架构设计
+
+## 学习目标
+
+通过本项目的学习，您将掌握：
+
+1. **向量数据库集成**: 学习如何使用Qdrant进行向量存储和检索
+2. **LLM应用开发**: 了解如何将大语言模型集成到实际应用中
+3. **语义搜索实现**: 掌握基于向量相似度的智能搜索技术
+4. **记忆冲突处理**: 学习如何处理和解决记忆系统中的冲突
+5. **系统架构设计**: 理解智能记忆系统的整体架构设计
 
 ## 功能特性
 
@@ -21,7 +41,7 @@
 - **DELETE**: 删除冲突或过时的记忆
 - **NONE**: 保持记忆不变
 
-## 安装和配置
+## 学习环境搭建
 
 ### 1. 安装依赖
 
@@ -40,21 +60,15 @@ pip install -r requirements.txt
 
 ### 3. 配置API密钥
 
-复制环境变量示例文件并配置你的API密钥：
-
-```bash
-cp env_example.txt .env
-```
-
-编辑`.env`文件，添加你的DashScope API密钥：
+**注意**: 请确保您有有效的API密钥用于学习目的：
 
 ```
 DASHSCOPE_API_KEY=your_actual_api_key_here
 ```
 
-## 使用方法
+## 学习使用方法
 
-### 基本使用
+### 基本使用示例
 
 ```python
 from memory_system import MemorySystem
@@ -80,66 +94,44 @@ for result in results:
     print(f"记忆: {result['text']}, 相似度: {result['score']}")
 ```
 
-### 运行示例
+### 运行学习示例
 
 ```bash
 python example.py
 ```
 
-### 测试Prompt模块
-
-```bash
-python test_prompt.py
-```
-
-### 运行Prompt示例
-
-```bash
-python prompt_example.py
-```
-
-## 系统架构
+## 学习架构分析
 
 ### 文件结构
 
 ```
 mini_mem/
-├── memory_system.py      # 核心记忆系统
-├── prompt.py            # Prompt定义和管理
-├── example.py           # 使用示例
-├── test_memory.py       # 测试脚本
-├── test_prompt.py       # Prompt测试脚本
+├── memory_system.py      # 核心记忆系统 - 学习重点
+├── prompt.py            # Prompt定义和管理 - 学习LLM应用
+├── example.py           # 使用示例 - 学习如何使用
 ├── requirements.txt     # 依赖包
-├── docker-compose.yml   # Qdrant服务配置
-├── start.sh            # 快速启动脚本
-├── env_example.txt     # 环境变量示例
 └── README.md           # 详细文档
 ```
 
-### 核心组件
+### 核心学习组件
 
-1. **MemorySystem**: 主记忆系统类
-   - `extract_facts()`: 从对话中提取事实
-   - `search_memories()`: 语义搜索记忆
-   - `process_memory()`: 处理记忆冲突
-   - `write_memory()`: 记忆写入主流程
+1. **MemorySystem**: 主记忆系统类 - 学习系统设计
+   - `extract_facts()`: 从对话中提取事实 - 学习LLM应用
+   - `search_memories()`: 语义搜索记忆 - 学习向量搜索
+   - `process_memory()`: 处理记忆冲突 - 学习冲突解决
+   - `write_memory()`: 记忆写入主流程 - 学习系统流程
 
-2. **PromptManager**: Prompt管理类
-   - `get_fact_extraction_prompt()`: 获取事实提取prompt
-   - `get_memory_processing_prompt()`: 获取记忆处理prompt
-   - `get_prompt_by_name()`: 根据名称获取prompt
-
-3. **向量数据库**: Qdrant
+2. **向量数据库**: Qdrant - 学习向量数据库应用
    - 存储记忆的向量表示
    - 支持语义搜索
    - 元数据过滤
 
-4. **大语言模型**: Qwen
+3. **大语言模型**: Qwen - 学习LLM集成
    - 事实提取
    - 记忆冲突处理
    - 文本向量化
 
-### 工作流程
+### 学习工作流程
 
 1. **记忆写入流程**:
    ```
@@ -151,7 +143,7 @@ mini_mem/
    查询 → 向量化 → 语义搜索 → 过滤 → 返回结果
    ```
 
-## API参考
+## 学习API参考
 
 ### MemorySystem类
 
@@ -169,70 +161,35 @@ MemorySystem(collection_name: str = "memories")
 - `update_memory(memory_id, new_text, metadata=None)`: 更新记忆
 - `delete_memory(memory_id)`: 删除记忆
 
-## Prompt管理
+## 学习Prompt管理
 
 ### Prompt模块
 
-系统使用专门的`prompt.py`模块来管理所有的prompt定义：
+系统使用专门的`prompt.py`模块来管理所有的prompt定义，这是学习LLM应用的重要部分：
 
 - **FACT_EXTRACTION_PROMPT**: 用于从用户对话中提取事实和偏好的prompt
 - **MEMORY_PROCESSING_PROMPT**: 用于处理记忆冲突和更新的prompt
 - **PromptManager**: 提供统一的prompt访问接口
 
-### 使用Prompt
+## 学习建议
 
-```python
-from prompt import PromptManager
+1. **从example.py开始**: 先运行示例代码，理解基本用法
+2. **阅读源码**: 深入理解memory_system.py的实现原理
+3. **修改参数**: 尝试调整相似度阈值、搜索限制等参数
+4. **扩展功能**: 基于现有代码添加新的记忆处理逻辑
+5. **性能优化**: 学习如何优化向量搜索和LLM调用
 
-# 获取事实提取prompt
-fact_prompt = PromptManager.get_fact_extraction_prompt()
+## 学习资源
 
-# 获取记忆处理prompt
-memory_prompt = PromptManager.get_memory_processing_prompt()
+- [Qdrant官方文档](https://qdrant.tech/documentation/)
+- [Qwen模型介绍](https://github.com/QwenLM/Qwen)
+- [向量数据库应用指南](https://www.pinecone.io/learn/)
 
-# 通过名称获取prompt
-prompt = PromptManager.get_prompt_by_name("fact_extraction")
-```
+## 贡献学习
 
-## 配置选项
+欢迎提交学习心得、代码改进建议或问题报告！
 
-### 环境变量
+---
 
-- `DASHSCOPE_API_KEY`: 阿里云DashScope API密钥
-- `QDRANT_HOST`: Qdrant主机地址（默认: localhost）
-- `QDRANT_PORT`: Qdrant端口（默认: 6333）
+**免责声明**: 本项目仅用于学习和研究目的，使用者需自行承担使用风险。
 
-### 系统参数
-
-- 向量维度: 1536
-- 距离度量: COSINE
-- 默认搜索结果数量: 5
-- 集合名称: "memories"
-
-## 注意事项
-
-1. **API密钥**: 确保你有有效的DashScope API密钥
-2. **Qdrant服务**: 确保Qdrant服务正在运行
-3. **网络连接**: 需要稳定的网络连接访问API服务
-4. **数据隐私**: 注意用户数据的隐私保护
-
-## 故障排除
-
-### 常见问题
-
-1. **API调用失败**: 检查API密钥是否正确配置
-2. **Qdrant连接失败**: 确保Qdrant服务正在运行
-3. **向量维度不匹配**: 确保使用正确的embedding模型
-
-### 调试模式
-
-在代码中添加调试信息：
-
-```python
-import logging
-logging.basicConfig(level=logging.DEBUG)
-```
-
-## 许可证
-
-MIT License 
