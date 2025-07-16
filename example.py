@@ -10,7 +10,7 @@ from memory_system import MemorySystem
 def main():
     """主函数 - 演示记忆系统的使用"""
     import os 
-    os.environ["DASHSCOPE_API_KEY"] = "sk-b8a3efbe07694d1484569b00fad91104"
+    os.environ["DASHSCOPE_API_KEY"] = ""
     # 初始化记忆系统
     print("初始化记忆系统...")
     memory_system = MemorySystem()
